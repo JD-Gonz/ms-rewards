@@ -15,7 +15,7 @@ options.add_argument("--user-data-dir=/home/josgon/.config/google-chrome")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # Number of times to repeat the search process
-num_searches = 35
+num_searches = 31
 
 # Loop to repeat the search process
 for i in range(num_searches):
