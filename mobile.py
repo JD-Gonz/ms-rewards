@@ -17,11 +17,7 @@ options.add_argument("--disable-extensions")
 options.add_argument("--user-data-dir=/home/josgon/.config/google-chrome")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-# Number of times to repeat the search process
-num_searches = randint(21,26)
-
-# Loop to repeat the search process
-for i in range(num_searches):
+for i in range(randint(21,26)):
     # Navigate to Bing.com
     driver.get('http://www.bing.com')
 
@@ -30,7 +26,7 @@ for i in range(num_searches):
 
     # Generate a random GUID
     search_query = str(uuid4().hex)[randint(0,18):randint(18,35)]
-    print(len(search_query), search_query)
+    print(i, len(search_query), search_query)
 
     # Enter the search query
     search.send_keys(search_query)
