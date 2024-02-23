@@ -1,3 +1,3 @@
 #!/bin/bash
-python3 /home/josgon/workspaces/msrewards/web.py
-python3 /home/josgon/workspaces/msrewards/mobile.py
+python3 /home/josgon/msrewards/web.py
+python3 /home/josgon/msrewards/mobile.py
