@@ -24,7 +24,7 @@ for i in range(randint(31,36)):
     search = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.NAME,"q")))
 
     # Generate a random GUID
-    search_query = str(uuid4().hex)[randint(0,18):randint(18,35)]
+    search_query = str(uuid4().hex)[randint(1,18):randint(18,35)]
     print(i, len(search_query), search_query)
 
     # Enter the search query
