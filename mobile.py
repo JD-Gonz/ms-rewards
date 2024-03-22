@@ -21,8 +21,11 @@ for i in range(randint(21,26)):
     # Navigate to Bing.com
     driver.get('http://www.bing.com')
 
+    if i == 0:
+        sleep(5)
+
     # Find the search input element by its name attribute
-    search = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.NAME,"q")))
+    search = WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.NAME,"q")))
 
     # Generate a random GUID
     search_query = str(uuid4().hex)[randint(1,18):randint(18,35)]
