@@ -2,6 +2,7 @@ from random import randint
 from uuid import uuid4
 from time import sleep
 from random import randint
+from datetime import datetime
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
@@ -16,7 +17,8 @@ def bingSearch(driver, num):
         if i == 0:
             sleep(5)
         elif i % 4 == 0 and i != num:
-            sleep(16 * 60)
+            print(datetime.now().strftime("%H:%M:%S") + ": Going to sleep for 15 min")
+            sleep(15 * 60)
             driver.get('http://www.bing.com')
             sleep(3)
 
