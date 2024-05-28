@@ -9,24 +9,25 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def bingSearch(driver, num, sleepInterval):
-    for i in range(num):
+    occurances = num + randint(1, 5)
+    for i in range(occurances):
         # Navigate to Bing.com
         driver.get('http://www.bing.com')
 
         if i == 0:
             sleep(5)
-        elif i % 4 == 0 and i != num:
+        elif i % 4 == 0 and i <= num:
             print(datetime.now().strftime("%H:%M:%S") + f": Going to sleep for {sleepInterval} min")
             sleep(sleepInterval * 60)
             driver.get('http://www.bing.com')
-            sleep(3)
+            sleep(2)
 
         # Find the search input element by its name attribute
         search = WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.NAME,"q")))
 
         # Generate a random GUID
         search_query = str(uuid4().hex)[randint(1,18):randint(18,35)]
-        print(i, len(search_query), search_query)
+        print(i + 1, len(search_query), search_query)
 
         # Enter the search query
         search.send_keys(search_query)
