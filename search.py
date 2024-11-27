@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def bingSearch(driver, num, sleepInterval):
+def bingSearch(driver, num, maxSleepInterval):
     occurances = num + randint(1, 5)
     for i in range(occurances):
         # Navigate to Bing.com
@@ -17,6 +17,7 @@ def bingSearch(driver, num, sleepInterval):
         if i == 0:
             sleep(5)
         elif i % 4 == 0 and i <= num:
+            sleepInterval = randint(15, maxSleepInterval)
             print(datetime.now().strftime("%H:%M:%S") + f": Going to sleep for {sleepInterval} min")
             sleep(sleepInterval * 60)
             driver.get('http://www.bing.com')
